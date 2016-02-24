@@ -1,0 +1,6 @@
+name "repl"
+description "read-eval-print-loop"
+authors "Vlad Levenfeld"
+copyright "Copyright © 2016, Vlad Levenfeld"
+license "MIT"
+targetType "sourceLibrary"
