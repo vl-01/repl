@@ -27,7 +27,10 @@ synchronized class Repl
       foreach(i, ref arg; args)
         arg = argStrs[i].to!(A[i]);
 
-      return action(args).text;
+      static if(is(B == void))
+        return "";
+      else
+        return action(args).text;
     };
   }
   void opIndexAssign(typeof(null), string name)
