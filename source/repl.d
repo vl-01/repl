@@ -28,9 +28,14 @@ synchronized class Repl
         arg = argStrs[i].to!(A[i]);
 
       static if(is(B == void))
+      {
+        action(args);
         return "";
+      }
       else
+      {
         return action(args).text;
+      }
     };
   }
   void opIndexAssign(typeof(null), string name)
