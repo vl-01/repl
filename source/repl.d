@@ -1,12 +1,14 @@
-import std.stdio;
-import std.range;
-import std.string;
-import std.algorithm;
-import std.functional;
-import std.typetuple;
-import std.conv;
-import std.concurrency;
-
+module repl;
+private {// import
+  import std.stdio;
+  import std.range;
+  import std.string;
+  import std.algorithm;
+  import std.functional;
+  import std.typetuple;
+  import std.conv;
+  import std.concurrency;
+}
 
 synchronized class Repl
 {
@@ -24,8 +26,8 @@ synchronized class Repl
 
       A args;
 
-      foreach(i, ref arg; args)
-        arg = argStrs[i].to!(A[i]);
+      foreach(i,_; args)
+        args[i] = argStrs[i].to!(A[i]);
 
       static if(is(B == void))
       {
