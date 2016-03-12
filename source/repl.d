@@ -10,7 +10,7 @@ private {// import
   import std.concurrency;
 }
 
-synchronized class Repl
+class Repl
 {
   private string delegate(string[])[string] actions;
 
